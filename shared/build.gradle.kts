@@ -102,3 +102,9 @@ val packForXcode by tasks.creating(Sync::class) {
     into(targetDir)
 }
 tasks.getByName("build").dependsOn(packForXcode)
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.jetbrains.handson.kmm.shared.cache"
+    }
+}
